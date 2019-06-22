@@ -5,3 +5,12 @@ navigator.getUserMedia({video:true,audio:false},function(stream){
     //将采集到的视频信息显示在video标签中
     document.getElementById("vi").srcObject = stream;
 },console.log)
+
+function addQuestion () {
+    var question = document.getElementById("template_question").cloneNode(true);
+    //在这里可以配置这个新的问题。
+    question.setAttribute("style","dispaly = true")
+    console.log(question)
+    document.getElementById("questions").appendChild(question);
+    return question;
+}
