@@ -6,11 +6,16 @@ navigator.getUserMedia({video:true,audio:false},function(stream){
     document.getElementById("vi").srcObject = stream;
 },console.log)
 
+
+/**
+ * 这个函数可以接受多个参数，分别是question，check_list
+ * @param question string
+ * @param check_list Array 四个元素，分别是四个选项的答案
+ */
 function addQuestion () {
+
     var question = document.getElementById("template_question").cloneNode(true);
     //在这里可以配置这个新的问题。
     question.setAttribute("style","dispaly = true")
-    console.log(question)
     document.getElementById("questions").appendChild(question);
-    return question;
 }
