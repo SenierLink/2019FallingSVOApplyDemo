@@ -6,16 +6,19 @@ navigator.getUserMedia({video:true,audio:false},function(stream){
     document.getElementById("vi").srcObject = stream;
 },console.log)
 
+question_number_ID = 0; //全局变量，用来赋值问题ID
 
 /**
- * 这个函数可以接受多个参数，分别是question，check_list
- * @param question string
+ * 这个函数可以接受多个参数，分别是question_title，check_list ，check_question
+ * @param question_title string
+ * @param check_question Array 四个元素，分别是题目的选项
  * @param check_list Array 四个元素，分别是四个选项的答案
  */
-function addQuestion () {
+function addQuestion (question_title, check_list, check_question) {
 
     var question = document.getElementById("template_question").cloneNode(true);
-    //在这里可以配置这个新的问题。
+    question.id = "question"+question_number_ID;
     question.setAttribute("style","dispaly = true")
     document.getElementById("questions").appendChild(question);
 }
+
