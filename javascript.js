@@ -7,6 +7,8 @@ navigator.getUserMedia({video:true,audio:false},function(stream){
 },console.log)
 
 
+
+
 var myQuestion = document.getElementById("template_question");  //调试用的
 
 /**
@@ -16,6 +18,22 @@ var check_title_list = ["aaa","bbbb","ccc","ddd"];
 var answer = [];
 var question_title = "test"
 
+/**
+ * 每道题都是一个对象好了
+ * 
+ * @class
+ * @property {string} -question_title 用来储存题干,
+ * @property {Array} -check_title_list 每一个选项， 
+ * @property {string} -question_answer 本题答案,
+ * @property {string} -question_only_ID 题目唯一标识id
+ */
+function Question (question_title,check_title_list,question_answer,question_only_ID) {
+    this.question_title = question_title;
+    this.check_title_list = check_title_list;
+    this.question_answer = question_answer;
+    this.question_only_ID = question_only_ID;
+}
+//Question.prototype  组合类构造方法吧，方法写在原型里面。
 
 
 
